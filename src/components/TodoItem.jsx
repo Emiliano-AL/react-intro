@@ -5,18 +5,18 @@ import { DeleteIcon } from './DeleteIcon';
 function TodoItem({ text, completed, onComplete, onDelete }) {
     return (
       <li 
-        onClick={onComplete}
         className={`TodoItem ${completed ? 'TodoItem--completed' : ''}`}>
           <CompleteIcon 
             completed={completed}
             onComplete={onComplete}
             />
-        <p 
-          className={`TodoItem-p ${completed && "TodoItem-p--complete"}`}>{text}
-        </p>
-        <DeleteIcon 
-          onDelete={onDelete}
-          />
+          <p 
+            className={`TodoItem-p ${completed && "TodoItem-p--complete"}`}>
+              {text}
+          </p>
+          <DeleteIcon 
+            onDelete={onDelete}
+            />
       </li>
     )
   }

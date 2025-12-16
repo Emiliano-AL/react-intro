@@ -28,6 +28,7 @@ function App() {
   });
 
   const completeTodo = (text) => {
+    console.log('Completing todo: ', text);
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos];
     newTodos[todoIndex].completed = true;
@@ -35,6 +36,7 @@ function App() {
   }
 
   const deleteTodo = (text) => {
+    console.log('Deleting todo: ', text);
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos];
     newTodos.splice(todoIndex, 1);
