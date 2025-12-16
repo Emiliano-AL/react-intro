@@ -7,17 +7,16 @@ function TodoItem({ text, completed, onComplete, onDelete }) {
       <li 
         onClick={onComplete}
         className={`TodoItem ${completed ? 'TodoItem--completed' : ''}`}>
-          <CompleteIcon />
-      {/* <span 
-        className={`Icon Icon-check ${completed && "Icon-check--active"}`}>V
-        </span> */}
-      <p 
-        className={`TodoItem-p ${completed && "TodoItem-p--complete"}`}>{text}
+          <CompleteIcon 
+            completed={completed}
+            onComplete={onComplete}
+            />
+        <p 
+          className={`TodoItem-p ${completed && "TodoItem-p--complete"}`}>{text}
         </p>
-        <DeleteIcon />
-      {/* <span 
-        onClick={onDelete}
-        className="Icon Icon-delete">X</span> */}
+        <DeleteIcon 
+          onDelete={onDelete}
+          />
       </li>
     )
   }
