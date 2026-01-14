@@ -7,10 +7,13 @@ import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError';
 import { EmptyTodos } from '../EmptyTodos';
 import { TodoContext } from '../TodoContext';
+import { Modal } from '../Modal';
+// import { TodoForm } from '../TodoForm';
+import React from 'react';
 
 function AppUI() {
 
-  const { loading, error, searchedTodos, completeTodo, deleteTodo } 
+  const { loading, error, searchedTodos, completeTodo, deleteTodo, openModal, setOpenModal } 
     = React.useContext(TodoContext);
 
   return (
@@ -19,11 +22,13 @@ function AppUI() {
       <TodoSearch />
     
         <TodoList>
-          { loading && ( <>
+          { loading && ( 
+            <>
             <TodosLoading />  
             <TodosLoading />  
             <TodosLoading />
-            </>)}
+            </>
+          )}
           { error && <TodosError />}
           { (!loading && !searchedTodos.length) && <EmptyTodos />}
           { searchedTodos.map(todo => (
@@ -37,7 +42,15 @@ function AppUI() {
           ))}
         </TodoList>
 
-      <CreateTodoButton />
+      <CreateTodoButton
+        setOpenModalVal={setOpenModal}
+      />
+
+      { openModal && (
+        <Modal>
+          This is modal content
+        </Modal>
+      )}
     </>
   );
 }

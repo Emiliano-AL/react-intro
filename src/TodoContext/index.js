@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocalStorage } from './TodoContext/useLocalStorage';
+import { useLocalStorage } from './useLocalStorage';
 
 const TodoContext = React.createContext();
 
@@ -16,6 +16,7 @@ function TodoProvider({ children}) {
     const totalTodos = todos.length;
 
     const [ searchValue, setSearchValue ] = React.useState('');
+    const [ openModal, setOpenModal ] = React.useState(false);
 
     const searchedTodos = todos.filter(todo => {
         const todoText = todo.text.toLowerCase();
@@ -41,6 +42,7 @@ function TodoProvider({ children}) {
         <TodoContext.Provider value={{
             loading,
             error,
+            openModal,
             completedTodos,
             totalTodos,
             searchValue,
@@ -48,6 +50,7 @@ function TodoProvider({ children}) {
             searchedTodos,
             completeTodo,
             deleteTodo,
+            setOpenModal,
         }}>
             {children}
         </TodoContext.Provider>

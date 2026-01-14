@@ -1,9 +1,9 @@
 import './CreateTodoButton.css';
 
-function CreateTodoButton() {
+function CreateTodoButton({ setOpenModalVal }) {
     return (
         <button 
-            onClick={() => console.log("sample")}
+            onClick={() => setOpenModalVal(state => !state)}
             className="CreateTodoButton"
             >+</button>
     )
