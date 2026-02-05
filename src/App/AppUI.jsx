@@ -8,7 +8,7 @@ import { TodosError } from '../TodosError';
 import { EmptyTodos } from '../EmptyTodos';
 import { TodoContext } from '../TodoContext';
 import { Modal } from '../Modal';
-// import { TodoForm } from '../TodoForm';
+import { TodoForm } from '../TodoForm';
 import React from 'react';
 
 function AppUI() {
@@ -48,7 +48,7 @@ function AppUI() {
 
       { openModal && (
         <Modal>
-          This is modal content
+          <TodoForm />
         </Modal>
       )}
     </>
