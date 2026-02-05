@@ -1,13 +1,51 @@
+:root {
+  /* Colors */
+  --color-bg: #f0ebe3;
+  --color-bg-elevated: #faf8f5;
+  --color-surface: #ffffff;
+  --color-border: #e5dfd6;
+  --color-text: #2d2a26;
+  --color-text-muted: #6b6560;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-success: #059669;
+  --color-success-bg: #d1fae5;
+  --color-danger: #dc2626;
+  --color-danger-hover: #b91c1c;
+  --color-overlay: rgba(45, 42, 38, 0.6);
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(45, 42, 38, 0.06);
+  --shadow-md: 0 4px 12px rgba(45, 42, 38, 0.08);
+  --shadow-lg: 0 8px 24px rgba(45, 42, 38, 0.1);
+  --shadow-focus: 0 0 0 3px rgba(37, 99, 235, 0.25);
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+  /* Typography */
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background: #F2F4F5;
-  color: #1E1E1F;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 #root {
-  margin: 0 24px;
+  margin: 0 auto;
+  max-width: 560px;
+  padding: 0 20px 100px;
   position: relative;
   min-height: 100vh;
 }

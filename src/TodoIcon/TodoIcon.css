@@ -3,39 +3,52 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 48px;
-  width: 48px;
-  font-size: 24px;
-  font-weight: bold;
-  /* background-color: #CCC; */
+  height: 40px;
+  width: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full, 9999px);
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .Icon-container-check {
   position: absolute;
-  left: 12px;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted, #6b6560);
 }
+
+.Icon-container-check:hover {
+  color: var(--color-success, #059669);
+  background: var(--color-success-bg, #d1fae5);
+}
+
 .Icon-container-check--active {
-  color: #4caf50;
-}
-
-.Icon-container-delete {
-  position: absolute;
-  top: -10px;
-  right: 0;
-}
-.Icon-container-delete:hover {
-  color: red;
-}
-
-.Icon-svg {
-  width: 24px;
-  height: 24px;
+  color: var(--color-success, #059669);
 }
 
 .Icon-container-check--active .Icon-svg {
-  fill: #4caf50;
+  fill: var(--color-success, #059669);
+}
+
+.Icon-container-delete {
+  position: relative;
+  top: auto;
+  right: auto;
+  color: var(--color-text-muted, #6b6560);
+}
+
+.Icon-container-delete:hover {
+  color: var(--color-danger, #dc2626);
+  background: #fef2f2;
 }
 
 .Icon-container-delete:hover .Icon-svg {
-  fill: red;
+  fill: var(--color-danger, #dc2626);
+}
+
+.Icon-svg {
+  width: 22px;
+  height: 22px;
+  transition: fill 0.2s;
 }

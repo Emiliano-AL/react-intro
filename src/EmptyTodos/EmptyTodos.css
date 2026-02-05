@@ -1,0 +1,15 @@
+.EmptyTodos {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: var(--color-bg-elevated, #faf8f5);
+  border-radius: var(--radius-md, 10px);
+  border: 1px dashed var(--color-border, #e5dfd6);
+  margin-top: 0.5rem;
+}
+
+.EmptyTodos-text {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-text-muted, #6b6560);
+  font-weight: 500;
+}

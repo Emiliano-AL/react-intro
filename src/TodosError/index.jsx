@@ -1,8 +1,11 @@
+import './TodosError.css';
 
 function TodosError() {
-    return (
-        <p>Hubo un error...</p>
-    );
+  return (
+    <div className="TodosError">
+      <p className="TodosError-text">Hubo un error...</p>
+    </div>
+  );
 }
 
 export { TodosError };
